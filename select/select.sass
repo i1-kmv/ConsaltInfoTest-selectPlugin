@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap')
+$height: 50px
+$border-color: #ccc
+
+body
+  font-family: 'Inconsolata', monospace
+  box-sizing: border-box
+
+.app
+  padding-top: 5px
+  display: flex
+  justify-content: center
+
+.wrapper
+  width: 500px
+
+.select
+  width: 100%
+  position: relative
+  z-index: 5
+  &.open
+    .select__dropdown
+      display: block
+    .select__input
+      border-bottom: none
+    .select__closearea
+      display: block
+
+  &__input
+    border: 1px solid $border-color
+    border-radius: 8px
+    height: $height
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 10px
+    cursor: pointer
+
+  &__dropdown
+    display: none
+    position: absolute
+    border: 1px solid  $border-color
+    border-radius: 8px
+    top: $height
+    left: 0
+    right: 0
+    max-height: 200px
+    overflow-y: auto
+    box-shadow: 2px 4px 6px rgba(0,0,0,.5)
+
+  &__list
+    padding: 0
+    margin: 0
+    list-style: none
+
+  &__item
+    padding: 13px 10px
+    border-bottom: 1px solid  $border-color
+    &.selected
+      background-color: darkcyan
+    &:hover
+      background-color: #eee
+      cursor: pointer
+      transition: .35s background-color
+
+  &__closearea
+    position: fixed
+    z-index: -1
+    display: none
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0

@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+body {
+  font-family: 'Inconsolata', monospace;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app {
+  padding-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper {
+  width: 500px;
+}
+
+.select {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.select.open .select__dropdown {
+  display: block;
+}
+
+.select.open .select__input {
+  border-bottom: none;
+}
+
+.select.open .select__closearea {
+  display: block;
+}
+
+.select__input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.select__dropdown {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  top: 50px;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  -webkit-box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.select__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.select__item {
+  padding: 13px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.select__item.selected {
+  background-color: darkcyan;
+}
+
+.select__item:hover {
+  background-color: #eee;
+  cursor: pointer;
+  -webkit-transition: .35s background-color;
+  transition: .35s background-color;
+}
+
+.select__closearea {
+  position: fixed;
+  z-index: -1;
+  display: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+/*# sourceMappingURL=select.css.map */
